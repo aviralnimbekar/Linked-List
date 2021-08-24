@@ -29,6 +29,11 @@ public class MyLinkedList {
         linkedList.append(70);
         linkedList.pop();
 
+        linkedList.append(56);
+        linkedList.append(30);
+        linkedList.append(70);
+        linkedList.popLast();
+
         linkedList.toPrint();
     }
 }

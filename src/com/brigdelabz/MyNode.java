@@ -86,6 +86,18 @@ class MyNode<T> {
         if (head != null)
             head = head.next;
     }
+
+    /**
+     * Purpose - Pop last method to delete last node or TAIL
+     */
+    public void popLast() {
+        Node<T> tempNode = head;
+        while (tempNode.next != null) {
+            tail = tempNode;
+            tempNode = tempNode.next;
+        }
+        tail.next = null;
+    }
 }
 
 
