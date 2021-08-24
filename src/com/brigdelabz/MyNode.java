@@ -78,6 +78,14 @@ class MyNode<T> {
             System.out.println("There must be two NODES to insert in between");
         }
     }
+
+    /**
+     * Purpose - Pop method to delete first node or HEAD
+     */
+    public void pop() {
+        if (head != null)
+            head = head.next;
+    }
 }
 
 
