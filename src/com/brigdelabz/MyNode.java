@@ -98,30 +98,19 @@ class MyNode<T> {
         }
         tail.next = null;
     }
+
+    /**
+     * Purpose - To search an element from the list
+     */
+    public boolean search(T key) {
+        boolean search = false;
+        while (head != null) {
+            if (head.key == key) {
+                search = true;
+                break;
+            }
+            head = head.next;
+        }
+        return search;
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

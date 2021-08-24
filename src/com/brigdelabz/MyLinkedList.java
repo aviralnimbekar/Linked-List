@@ -34,6 +34,11 @@ public class MyLinkedList {
         linkedList.append(70);
         linkedList.popLast();
 
+        linkedList.append(56);
+        linkedList.append(30);
+        linkedList.append(70);
+        System.out.println(linkedList.search(30));
+
         linkedList.toPrint();
     }
 }
