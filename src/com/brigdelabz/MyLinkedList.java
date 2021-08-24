@@ -3,7 +3,7 @@ package com.brigdelabz;
 /**
  * Purpose Main class
  */
-public class MyLinkedList {
+public class MyLinkedList extends MyNode{
 
     /**
      * Purpose - Execution of all methods
@@ -15,6 +15,12 @@ public class MyLinkedList {
         linkedList.add(70);
         linkedList.add(30);
         linkedList.add(56);
+
+        linkedList.append(56);
+        linkedList.append(30);
+        linkedList.append(70);
+
         linkedList.toPrint();
+
     }
 }

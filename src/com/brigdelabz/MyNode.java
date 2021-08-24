@@ -22,7 +22,22 @@ class MyNode<T> {
     Node<T> tail;
 
     /**
-     * Purpose - Adding value(KEY) and next to a node
+     * Purpose - Printing all nodes
+     */
+    public void toPrint() {
+        Node<T> current = head;
+        if (current == null) {
+            System.out.println("List is empty");
+        } else {
+            while (current != null) {
+                System.out.println(current.key);
+                current = current.next;
+            }
+        }
+    }
+
+    /**
+     * Purpose - Adding elements to a node
      */
     public void add(T key) {
         Node<T> newNode = new Node<>(key);
@@ -38,17 +53,16 @@ class MyNode<T> {
     }
 
     /**
-     * Purpose - Printing all nodes
+     * Purpose - Appending elements to a node
      */
-    public void toPrint() {
-        Node<T> current = head;
-        if (current == null) {
-            System.out.println("List is empty");
-        } else {
-            while (current != null) {
-                System.out.println(current.key);
-                current = current.next;
-            }
+    public void append(T key) {
+        Node<T> newNode = new Node<>(key);
+        if (head == null) {
+            this.head = newNode;
+            this.tail = newNode;
+        }else {
+            tail.next = newNode;
+            tail = newNode;
         }
     }
 }
