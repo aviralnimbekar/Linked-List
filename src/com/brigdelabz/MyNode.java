@@ -47,7 +47,7 @@ class MyNode<T> {
             this.tail = newNode;
         } else {
             Node<T> tempNode = this.head;
-            this.head= newNode;
+            this.head = newNode;
             this.head.next = tempNode;
         }
     }
@@ -60,9 +60,48 @@ class MyNode<T> {
         if (head == null) {
             this.head = newNode;
             this.tail = newNode;
-        }else {
+        } else {
             tail.next = newNode;
             tail = newNode;
         }
     }
+
+    /**
+     * Purpose - Inserts element between two existing nodes
+     */
+    public void insert(Node<T> prevNode, Node<T> nextNode, T key) {
+        if (prevNode != null && nextNode != null) {
+            Node<T> newNode = new Node<>(key);
+            prevNode.next = newNode;
+            newNode.next = nextNode;
+        } else {
+            System.out.println("There must be two NODES to insert in between");
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
