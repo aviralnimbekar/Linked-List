@@ -12,9 +12,9 @@ public class MyLinkedList {
         System.out.println("Welcome to Linked List Practice Problem");
 
         MyNode<Integer> linkedList = new MyNode<>();
-        linkedList.add(56);
-        linkedList.add(30);
         linkedList.add(70);
+        linkedList.add(30);
+        linkedList.add(56);
         linkedList.toPrint();
     }
 }

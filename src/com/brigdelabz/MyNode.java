@@ -1,7 +1,7 @@
 package com.brigdelabz;
 
 /**
- * Purpose - Creating a single node
+ * Purpose - Creating a single empty node
  */
 class Node<T> {
     T key;
@@ -31,8 +31,9 @@ class MyNode<T> {
             this.head = newNode;
             this.tail = newNode;
         } else {
-            tail.next = newNode;
-            tail = newNode;
+            Node<T> tempNode = this.head;
+            this.head= newNode;
+            this.head.next = tempNode;
         }
     }
 
@@ -45,7 +46,7 @@ class MyNode<T> {
             System.out.println("List is empty");
         } else {
             while (current != null) {
-                System.out.println(current.key + " ");
+                System.out.println(current.key);
                 current = current.next;
             }
         }
