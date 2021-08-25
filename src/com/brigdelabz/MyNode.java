@@ -47,7 +47,7 @@ class MyNode<T> {
             this.tail = newNode;
         } else {
             Node<T> tempNode = this.head;
-            this.head = newNode;
+            head = newNode;
             this.head.next = tempNode;
         }
     }
@@ -69,11 +69,15 @@ class MyNode<T> {
     /**
      * Purpose - Inserts element between two existing nodes
      */
-    public void insert(Node<T> prevNode, Node<T> nextNode, T key) {
-        if (prevNode != null && nextNode != null) {
-            Node<T> newNode = new Node<>(key);
+    public void insert(T keyAfter, T newkey) {
+
+        Node<T> prevNode = search(keyAfter);
+        if (prevNode != null) {
+            Node<T> newNode = new Node<>(newkey);
+            Node<T> tempNode;
+            tempNode = prevNode.next;
             prevNode.next = newNode;
-            newNode.next = nextNode;
+            newNode.next = tempNode;
         } else {
             System.out.println("There must be two NODES to insert in between");
         }
@@ -102,15 +106,24 @@ class MyNode<T> {
     /**
      * Purpose - To search an element from the list
      */
-    public boolean search(T key) {
-        boolean search = false;
-        while (head != null) {
-            if (head.key == key) {
-                search = true;
+    public Node<T> search(T key) {
+        boolean found = false;
+        Node<T> tempNode = head;
+
+        while (tempNode != null) {
+            if (tempNode.key == key) {
+                found = true;
                 break;
-            }
-            head = head.next;
+            } else
+
+            tempNode = tempNode.next;
         }
-        return search;
+
+        if (found)
+            System.out.println("LinkedList contains " + key);
+        else
+            System.out.println("LinkedList dose not contains " + key);
+
+        return tempNode;
     }
 }
