@@ -115,8 +115,7 @@ class MyNode<T> {
                 found = true;
                 break;
             } else
-
-            tempNode = tempNode.next;
+                tempNode = tempNode.next;
         }
 
         if (found)
@@ -125,5 +124,26 @@ class MyNode<T> {
             System.out.println("LinkedList dose not contains " + key);
 
         return tempNode;
+    }
+
+    /**
+     * Purpose - To delete element from list at random position
+     */
+    public void delete(T key) {
+
+        Node<T> keyNode = search(key);
+        Node<T> tempNode = head, prevNode = null;
+
+        if (head.key == key) {
+            pop();
+        } else {
+            while (tempNode.key != key) {
+                prevNode = tempNode;
+                tempNode = tempNode.next;
+            }
+
+            prevNode.next = keyNode.next;
+            keyNode.next = null;
+        }
     }
 }

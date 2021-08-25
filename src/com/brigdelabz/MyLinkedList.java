@@ -39,10 +39,16 @@ public class MyLinkedList {
 //        linkedList.append(70);
 //        linkedList.search(30);
 
+//        linkedList.append(56);
+//        linkedList.append(30);
+//        linkedList.append(70);
+//        linkedList.insert(30, 40);
+
         linkedList.append(56);
         linkedList.append(30);
+        linkedList.append(40);
         linkedList.append(70);
-        linkedList.insert(30 , 40);
+        linkedList.delete(40);
 
         linkedList.toPrint();
     }
