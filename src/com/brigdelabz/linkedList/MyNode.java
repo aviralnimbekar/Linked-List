@@ -40,7 +40,7 @@ public class MyNode<T> {
     /**
      * Purpose - Adding elements to a node
      */
-    public Node<T> add(T key) {
+    public void add(T key) {
         Node<T> newNode = new Node<>(key);
 
         if (head == null) {
@@ -51,7 +51,6 @@ public class MyNode<T> {
             head = newNode;
             this.head.next = tempNode;
         }
-        return newNode;
     }
 
     /**
@@ -167,7 +166,7 @@ public class MyNode<T> {
     /**
      * Purpose - Sorting of node in ascending ordered
      */
-    void sortedAdd(T key) {
+    public void sortedAdd(T key) {
 
         Node<T> newNode = new Node<>(key);
         Node<T> tempNode = head;
@@ -184,5 +183,10 @@ public class MyNode<T> {
             newNode.next = tempNode.next;
             tempNode.next = newNode;
         }
+    }
+
+    public void peak() {
+
+        System.out.println("Top element in stack is : "  + head.key);
     }
 }
