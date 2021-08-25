@@ -1,4 +1,4 @@
-package com.brigdelabz;
+package com.brigdelabz.linkedList;
 
 /**
  * Purpose - Creating a single empty node
@@ -16,7 +16,7 @@ class Node<T> {
 /**
  * Purpose - Manipulating Linked list
  */
-class MyNode<T> {
+public class MyNode<T> {
 
     Node<T> head;
     Node<T> tail;
@@ -31,7 +31,7 @@ class MyNode<T> {
             System.out.println("List is empty");
         } else {
             while (current != null) {
-                System.out.print(current.key + " ");
+                System.out.println(current.key + " ");
                 current = current.next;
             }
         }

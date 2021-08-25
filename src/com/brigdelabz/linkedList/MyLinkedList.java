@@ -1,4 +1,4 @@
-package com.brigdelabz;
+package com.brigdelabz.linkedList;
 
 /**
  * Purpose - Main class
