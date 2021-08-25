@@ -1,7 +1,9 @@
 package com.brigdelabz;
 
+import com.sun.org.apache.bcel.internal.generic.FLOAD;
+
 /**
- * Purpose Main class
+ * Purpose - Main class
  */
 public class MyLinkedList {
 
@@ -22,7 +24,7 @@ public class MyLinkedList {
 //
 //        linkedList.append(56);
 //        linkedList.append(70);
-//        linkedList.insert(linkedList.head,30);
+//        linkedList.insert(56,30);
 //
 //        linkedList.append(56);
 //        linkedList.append(30);
@@ -38,19 +40,24 @@ public class MyLinkedList {
 //        linkedList.append(30);
 //        linkedList.append(70);
 //        linkedList.search(30);
-
+//
 //        linkedList.append(56);
 //        linkedList.append(30);
 //        linkedList.append(70);
 //        linkedList.insert(30, 40);
+//
+//        linkedList.append(56);
+//        linkedList.append(30);
+//        linkedList.append(40);
+//        linkedList.append(70);
+//        System.out.println("Size before removing 40 : " + linkedList.size());
+//        linkedList.delete(40);
+//        System.out.println("Size after removing 40 : " + linkedList.size());
 
-        linkedList.append(56);
-        linkedList.append(30);
-        linkedList.append(40);
-        linkedList.append(70);
-        System.out.println("Size before removing 40 : " + linkedList.size());
-        linkedList.delete(40);
-        System.out.println("Size after removing 40 : " + linkedList.size());
+        linkedList.sortedAdd(56);
+        linkedList.sortedAdd(30);
+        linkedList.sortedAdd(40);
+        linkedList.sortedAdd(70);
 
         linkedList.toPrint();
     }

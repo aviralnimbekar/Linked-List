@@ -26,11 +26,12 @@ class MyNode<T> {
      */
     public void toPrint() {
         Node<T> current = head;
+
         if (current == null) {
             System.out.println("List is empty");
         } else {
             while (current != null) {
-                System.out.println(current.key);
+                System.out.print(current.key + " ");
                 current = current.next;
             }
         }
@@ -39,7 +40,7 @@ class MyNode<T> {
     /**
      * Purpose - Adding elements to a node
      */
-    public void add(T key) {
+    public Node<T> add(T key) {
         Node<T> newNode = new Node<>(key);
 
         if (head == null) {
@@ -50,12 +51,13 @@ class MyNode<T> {
             head = newNode;
             this.head.next = tempNode;
         }
+        return newNode;
     }
 
     /**
      * Purpose - Appending elements to a node
      */
-    public void append(T key) {
+    public Node<T> append(T key) {
         Node<T> newNode = new Node<>(key);
         if (head == null) {
             this.head = newNode;
@@ -64,16 +66,17 @@ class MyNode<T> {
             tail.next = newNode;
             tail = newNode;
         }
+        return newNode;
     }
 
     /**
      * Purpose - Inserts element between two existing nodes
      */
-    public void insert(T keyAfter, T newkey) {
+    public void insert(T keyAfter, T newKey) {
 
         Node<T> prevNode = search(keyAfter);
         if (prevNode != null) {
-            Node<T> newNode = new Node<>(newkey);
+            Node<T> newNode = new Node<>(newKey);
             Node<T> tempNode;
             tempNode = prevNode.next;
             prevNode.next = newNode;
@@ -159,5 +162,27 @@ class MyNode<T> {
             tempNode = tempNode.next;
         }
         return size;
+    }
+
+    /**
+     * Purpose - Sorting of node in ascending ordered
+     */
+    void sortedAdd(T key) {
+
+        Node<T> newNode = new Node<>(key);
+        Node<T> tempNode = head;
+
+        if (head == null || (Integer) head.key > (Integer) newNode.key) {
+            newNode.next = head;
+            head = newNode;
+
+        } else {
+            while (tempNode.next != null &&
+                    (Integer) tempNode.next.key < (Integer) newNode.key) {
+                tempNode = tempNode.next;
+            }
+            newNode.next = tempNode.next;
+            tempNode.next = newNode;
+        }
     }
 }
