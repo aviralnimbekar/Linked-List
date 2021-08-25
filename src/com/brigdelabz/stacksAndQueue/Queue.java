@@ -12,6 +12,14 @@ public class Queue {
         myQueue.append(56);
         myQueue.append(30);
         myQueue.append(70);
-        myQueue.peak();
+
+        myQueue.peak(); //56
+        myQueue.pop();
+        myQueue.peak(); //30
+        myQueue.pop();
+        myQueue.peak(); //70
+        myQueue.pop();
+        myQueue.toPrint();
+
     }
 }
