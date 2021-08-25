@@ -146,4 +146,18 @@ class MyNode<T> {
             keyNode.next = null;
         }
     }
+
+    /**
+     * Purpose - to find length or size of list
+     */
+    public Integer size() {
+        Node<T> tempNode = head;
+        Integer size = 0;
+
+        while (tempNode != null) {
+            size++;
+            tempNode = tempNode.next;
+        }
+        return size;
+    }
 }

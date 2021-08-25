@@ -48,7 +48,9 @@ public class MyLinkedList {
         linkedList.append(30);
         linkedList.append(40);
         linkedList.append(70);
+        System.out.println("Size before removing 40 : " + linkedList.size());
         linkedList.delete(40);
+        System.out.println("Size after removing 40 : " + linkedList.size());
 
         linkedList.toPrint();
     }
